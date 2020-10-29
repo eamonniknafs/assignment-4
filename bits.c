@@ -167,7 +167,8 @@ NOTES:
  *   Rating: 1
  */
 int bitAnd(int x, int y) {
-  return 2;
+  //equivalent of & using | & ~ (DeMorgan's Law)
+  return ~(~x | ~y);
 }
 /* 
  * TMax - return maximum two's complement integer 
@@ -247,3 +248,4 @@ int addOK(int x, int y) {
 int bitCount(int x) {
   return 2;
 }
+zxsd  e`y
