@@ -192,7 +192,13 @@ int tmax(void) {
  *  Rating: 2
  */
 int byteSwap(int x, int n, int m) {
-    return 2;
+  int mask = 0xff;
+  m = m<<3; //shift 3 to adjust for bytes
+  n = n<<3; //shift 3 to adjust for bytes
+  mask = mask & ((x>>n) ^ (x>>m)); // use mask
+  x = x ^ (mask<<m); //swap
+  x = x ^ (mask<<n); //swap
+  return x;
 }
 // Rating: 3
 /* 
