@@ -212,7 +212,10 @@ int byteSwap(int x, int n, int m) {
  *   Rating: 3
  */
 int bitMask(int highbit, int lowbit) {
-  return 2;
+	highbit = ~0 << highbit; //shifts 1s over by highbit
+  lowbit = ~0 << lowbit; //shifts 1s over by lowbit
+	highbit = ~(highbit << 1); //set highbit to inverse of highbit mask shifted by 1
+  return lowbit&highbit; //returns mask
 }
 /* 
  * isLess - if x < y  then return 1, else return 0 
