@@ -243,7 +243,8 @@ int isNonNegative(int x) {
  *   Rating: 3
  */
 int addOK(int x, int y) {
-  return 2;
+  int ovr = ((x+y) ^ x) & ((x+y) ^ y); //calculate if overflow
+  return !(ovr >> 31); //shift and invert to determine bool value
 }
 // Rating: 4
 /*
