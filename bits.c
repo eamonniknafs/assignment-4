@@ -260,5 +260,11 @@ int addOK(int x, int y) {
  *   Rating: 4
  */
 int bitCount(int x) {
-  return 2;
+  //deals with one byte at a time, adds all of them together at the end
+  int mask4 = 1 | (1<<8) | (1<<16) | (1<<24);
+  int mask = 0xFF; //mask for the least significant byte
+  int s4 = (x&mask4) + ((x>>1)&mask4) + ((x>>2)&mask4) + ((x>>3)&mask4) + ((x>>4)&mask4) + ((x>>5)&mask4) + ((x>>6)&mask4) + ((x>>7)&mask4); 
+  int s1 = (s4&mask) + ((s4>>8)&mask) + ((s4>>16)&mask) + ((s4>>24)&mask);
+  return s1;
+  //got significant help from: http://graphics.stanford.edu/~seander/bithacks.html#CountBitsSetParallel & https://stackoverflow.com/questions/35192719/can-someone-explain-how-this-bitcount-code-works
 }
