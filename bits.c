@@ -177,8 +177,8 @@ int bitAnd(int x, int y) {
  *   Rating: 1
  */
 int tmax(void) {
-  //~0u is the maximum value of an unsigned int, then shifted to get tmax
-  unsigned int t_max = ~0u>>1;
+  //~0u is the maximum value of an int, then shifted to get tmax
+  int t_max = ~0u>>1;
   return t_max;
 }
 // Rating: 2
