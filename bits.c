@@ -177,8 +177,8 @@ int bitAnd(int x, int y) {
  *   Rating: 1
  */
 int tmax(void) {
-  //~0u is the maximum value of an int, then shifted to get tmax
-  int t_max = ~0u>>1;
+  //the inverse of 1 left shifted 31 places is tmax
+  int t_max = ~(1 << 31);
   return t_max;
 }
 // Rating: 2
