@@ -222,7 +222,9 @@ int bitMask(int highbit, int lowbit) {
  *   Rating: 3
  */
 int isLess(int x, int y) {
-  return 2;
+  int diff = y + ~x; //calculate difference
+  int less = diff ^ (x ^ y) & (diff ^ y); //calculate if less than
+  return !(less >> 31); //Right shift and invert to determine bool value
 }
 /* 
  * isNonNegative - return 1 if x >= 0, return 0 otherwise 
