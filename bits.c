@@ -232,7 +232,7 @@ int isLess(int x, int y) {
  *   Rating: 3
  */
 int isNonNegative(int x) {
-  return 2;
+  return !(x >> 31); //shift over positive sign bit and invert
 }
 /* 
  * addOK - Determine if can compute x+y without overflow
